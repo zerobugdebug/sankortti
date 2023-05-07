@@ -1,0 +1,73 @@
+.gameboard {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c3c3c;
+    padding: 1rem;
+    color: white;
+}
+
+.player-hand,
+.opponent-hand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.player-hand>*,
+.opponent-hand>* {
+    flex: 0 0 auto;
+}
+
+.battle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #d0d0d0;
+    padding: 1rem;
+}
+
+.notifications {
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+.attacker,
+.defender {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 150px;
+    height: 200px;
+}
+
+.attacker .card,
+.defender .card {
+    /* Customize the attacker and defender card styles */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.attacker {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.defender {
+    background-color: rgba(255, 0, 0, 0.1);
+}
