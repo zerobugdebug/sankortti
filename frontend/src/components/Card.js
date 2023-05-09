@@ -19,11 +19,18 @@ export default Card; */
 import React from "react";
 import "./Card.css";
 
-function Card({ card, type }) {
+function Card({ card, type, onCardClick, isSelected }) {
     const { attack, defense, power, speed } = card;
+    const handleClick = () => {
+        if (type === "player" && onCardClick) {
+            onCardClick(card, type);
+        }
+    };
+
+    const cardClasses = `card ${type}${isSelected ? " selected" : ""}`;
 
     return (
-        <div className={`card ${type}`}>
+        <div className={cardClasses} onClick={handleClick}>
             <div className="card-stats">
                 <div className="attack">Attack: {attack}</div>
                 <div className="defense">Defense: {defense}</div>

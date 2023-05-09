@@ -17,6 +17,14 @@ header {
 .player-hand,
 .opponent-hand {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-hand>.cards,
+.opponent-hand>.cards {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -70,4 +78,60 @@ header {
 
 .defender {
     background-color: rgba(255, 0, 0, 0.1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.card.zoomed {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    cursor: pointer;
+}
+
+.zoomed-card-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.card.zoomed {
+    cursor: pointer;
+}
+
+.confirm-button {
+    margin-top: 1rem;
+    position: absolute;
+    bottom: -10rem;
+    /* Move the button below the card */
+    z-index: 11;
+    /* Ensure the button appears above the card */
+}
+
+
+.selected {
+    transform: translateY(-1rem);
+}
+
+.battle-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.1);
 }

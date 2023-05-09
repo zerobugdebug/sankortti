@@ -4,7 +4,8 @@ import GameBoard from "./components/GameBoard";
 
 function App() {
   const [gameName] = useState("My Card Game");
-  const [turnNumber, setTurnNumber] = useState(1);
+  // const [turnNumber, setTurnNumber] = useState(1);
+  const [turnNumber] = useState(1);
 
   const [player] = useState({
     name: "Player 1",
